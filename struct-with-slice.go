@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-  "strconv"
+	"strconv"
 )
 
 // Customer with one or more address
@@ -26,12 +26,12 @@ type Location struct {
 
 func main() {
 
-  //Example 1 - We know the # of Slices
+	//Example 1 - We know the # of Slices
 	customer := LengthKnown()
 	PrintJSON(customer)
 
-  //Example 2 - Dynamic Slice
-  customer = DynamicSlice()
+	//Example 2 - Dynamic Slice
+	customer = DynamicSlice()
 	PrintJSON(customer)
 
 }
@@ -80,7 +80,7 @@ func DynamicSlice() Customer {
 		data.State = strconv.Itoa(i)
 		data.Country = strconv.Itoa(i)
 
-    locations = append(locations,data)
+		locations = append(locations, data)
 	}
 
 	// Add a customer with locations
@@ -93,14 +93,14 @@ func DynamicSlice() Customer {
 }
 
 // Print JSON out to the consoles
-func PrintJSON(customer Customer){
-  json, err := json.Marshal(customer)
-  if err != nil {
-    fmt.Println(err)
-    return
-  }
+func PrintJSON(customer Customer) {
+	json, err := json.Marshal(customer)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-  // Print the Results
-  fmt.Println(string(json))
-  fmt.Println("\n")
+	// Print the Results
+	fmt.Println(string(json))
+	fmt.Println("\n")
 }
